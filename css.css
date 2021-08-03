@@ -1,0 +1,453 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    --moz-user-select: none;
+    -ms-user-select: none;
+    -user-select: none;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+body{
+    background-color: #1d1e1f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* Triple Dots */
+.more{
+    margin: 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+}
+.triple-dot{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    transition: all 1s;
+    z-index: 4;
+}
+.triple-dot:hover{
+    cursor: pointer;
+}
+.triple-dot::before{
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 25px;
+    height: 3px;
+    background: #666;
+    transition: all 0.5s;
+}
+.triple-dot::after{
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 25px;
+    height: 15px;
+    border: 3px solid #666;
+    border-left: 0;
+    border-right: 0;
+    transition: all 0.5s;
+}
+.more .menu{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: #444;
+    opacity: 0;
+    z-index: 5;
+    transition: 1s;
+}
+.more .menu:hover{
+    cursor: pointer;
+}
+.more .menu:hover{
+    top: 0;
+    width: 220px;
+    height: 100vh;
+    opacity: 1;
+}
+.more .menu:hover ~ .triple-dot{
+    right: -350px;
+    z-index: 6;
+}
+.more .menu:hover ~ .triple-dot::after{
+    top: 0;
+    left: 0;
+    border: none;
+    height: 3px;
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+.more .menu:hover ~ .triple-dot::before{
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: #fff;
+    transform: rotate(-45deg);
+}
+/* Triple Dots end */
+/* -------------------------------------------------- */
+/* Body */
+.body{
+    padding: 4em;
+    min-height: 100%;
+    width: 1080px;
+    background-color: #0D1117;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.index{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+/* Index1 start here */
+.index11, .index12{
+    width: 50%;
+}
+.index1 img{
+    width: 240px;
+    height: 240px;
+    border: 4px solid #444;
+    border-radius: 50%;
+    transition: all 2s;
+    cursor: pointer;
+}
+.index1 img:hover{
+    border-radius: 10%;
+}
+.index1 .discription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.index1 .discription .name{
+    margin: 10px 0;
+    letter-spacing: 4px;
+    word-spacing: 12px;
+    font-size: 2em;
+    font-weight: bolder;
+    color: #ddd;
+}
+.index1 .discription .dev{
+    margin: 0.8em 0 2em 0;
+    letter-spacing: 2px;
+    word-spacing: 8px;
+    font-size: 1.2em;
+    font-weight: 1000;
+    color: rgb(118, 118, 118);
+}
+.index1 .discription .contact .wa, .index1 .discription .contact .mail,  .index1 .discription .contact .location{
+    margin: 10px 0;
+    display: flex;
+    color: rgb(118, 118, 118);
+    letter-spacing: 4px;
+    word-spacing: 8px;
+    font-weight: 500;
+    text-shadow: 0 0 1px rgb(63, 73, 61);
+}
+.index1 .discription .contact img{
+    margin-right: 20px;
+    height: 1.2em;
+    width: 1.2em;
+    border: none;
+}
+.index1 .discription .contact .number, .index1 .discription .contact .email,  .index1 .discription .contact .locate{
+    cursor: pointer;
+}
+hr{
+    margin: 2em 0;
+    width: 100%;
+    height: 4px;
+    border: none;
+    background-color: rgb(40, 4, 65);
+}
+/* Index1 end here */
+/* ------------------------------------------------- */
+/* Index2 Start here */
+.index2 .objective .content{
+    padding: 10px;
+    color: #888;
+    text-indent: 2em;
+    text-align: justify;
+    font-size: 1.2em;
+    letter-spacing: 3px;
+    word-spacing: 8px;
+}
+/* Index2 end Here */
+/* ------------------------------------------------- */
+/* Technical Skill is here */
+.skill .stacks{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.index .heading{
+    margin: 20px 0 20px 0;
+    padding: 6px 10px;
+    height: 36px;
+    border-left: 4px solid #888;
+    overflow: hidden;
+    letter-spacing: 1.5px;
+    word-spacing: 5px;
+}
+.index .heading h{
+    font-size: 20px;
+    font-weight: bold;
+    color: #ddd;
+    animation: heading 2s;
+}
+@keyframes heading{
+    from{margin-left: -100px; color: #444;}
+    to{width: 200px; color: #ddd;}
+}
+.skill .stacks img{
+    height: 1.5em;
+    width: 1.5em;
+    border: none;
+}
+.skill .stacks .skl{
+    margin: 10px;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    height: 2em;
+    line-height: 2em;
+    letter-spacing: 2px;
+    border-radius: 1em;
+    cursor: default;
+    color: #888;
+    text-shadow: 0 0 2px rgb(90, 60, 60);
+    box-shadow: 2px 4px 12px #444;
+}
+.skill .stacks span{
+    padding-left: 10px;
+}
+/* Technical Skill eend here */
+/* ----------------------------------------------------- */
+/* Education Qualification Start here */
+.index4 .education{
+    width: 100%;
+}
+.index4 .education table{
+    width: 100%;
+    font-weight: bold;
+    color: #888;
+}
+.index4 .education table td, .index4 .education table th{
+    box-shadow: 0 0 4px #444;
+}
+.index4 .education table th{
+    font-size: 1.2em;
+    padding: 10px;
+    color: rgb(129, 95, 95);
+    text-shadow: 0 0 0px rgba(98, 0, 255, 0.733);
+}
+.index4 .education table th:first-child{
+    border-radius: 12px 0 0 0;
+}
+.index4 .education table th:last-child{
+    border-radius: 0 12px 0 0;
+}
+.index4 .education table td{
+    padding: 10px;
+}
+/* Education Qualification end here */
+/* ----------------------------------------------------- */
+/* Projects start here */
+.index5 .project{
+    width: 100%;
+}
+.index5 .project .proj{
+    margin: 20px;
+    padding: 20px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    border-radius: 1em;
+    box-shadow: 2px 3px 12px #444;
+}
+.index5 .project .projBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.index5 .project .proj .title{
+    line-height: 2em;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.index5 .project .proj .details{
+    line-height: 2em;
+    font-size: 1em;
+    text-align: center;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+}
+.index5 .project .proj .go{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.index5 .project .proj .go .view, .index5 .project .proj .go .live{
+    padding: 20px;
+    margin: 10px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1em;
+    box-shadow: 2px 4px 12px rgb(134, 30, 94);
+}
+.index5 .project .viewAll{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+.index5 .project .viewAll .button{
+    padding: 20px;
+    font-weight: bold;
+    color: #888;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 1em;
+    box-shadow: 2px 4px 12px rgb(134, 30, 94);
+}
+/* Projects end here */
+/* ----------------------------------------------------- */
+/* Achievement start here */
+.index6 .achievement{
+    width: 100%;
+}
+.index6 .achievement ul{
+    padding-left: 2em;
+}
+.index6 .achievement li{
+    padding: 0 0 1em 0;
+    color: #888;
+    text-align: justify;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+}
+/* Achievement end here */
+/* ----------------------------------------------------- */
+/* Hobbies start here */
+.index7 .hobbie{
+    width: 100%;
+}
+.index7 .hobbie .list{
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.index7 .hobbie .list .tile{
+    margin: 10px;
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    text-shadow: 0 0 2px rgb(90, 60, 60);
+    box-shadow: 2px 4px 12px #444;
+}
+.index7 .hobbie .list .tile img{
+    height: 1.5em;
+    width: 1.5em;
+}
+.index7 .hobbie .list .tile span{
+    padding-left: 10px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+}
+/* Hobbies end here */
+/* ----------------------------------------------------- */
+/* Personal Details Start here */
+.index8 .personal{
+    width: 100%;
+}
+.index8 .personal table{
+    color: #888;
+    letter-spacing: 2px;
+    word-spacing: 6px;
+}
+.index8 .personal table td{
+    padding: 10px;
+    line-height: 2em;
+    vertical-align: middle;
+    font-size: 0.8em;
+    box-shadow: 0 0 4px #444;
+}
+/* Personal Details end here */
+/* ----------------------------------------------------- */
+/* Footer is here */
+.footer{
+    margin: 20px;
+}
+.footer .button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.5em;
+    width: 1.5em;
+    transition: all 2s;
+}
+.footer .button:hover{
+    width: 400px;
+}
+.footer .button img{
+    border-radius: 50%;
+    height: 1.5em;
+    width: 1.5em;
+    cursor: pointer;
+}
+.footer .button span{
+    height: 1.2em;
+    color: #888;
+    padding-left: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    overflow: hidden;
+}
+/* ----------------------------------------------------- */
+/* Responsive CSS */
+@media screen and (max-width: 1080px) {
+    .body{
+        width: 100%;
+    }
+}
